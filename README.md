@@ -48,3 +48,36 @@
     }
   ]
 ```
+
+## 挂载到 nignx
+
+```
+    # 配置 ws+tls 节点 优化版
+    location /rss {
+        proxy_redirect off;
+        # 反向代理
+        proxy_pass http://127.0.0.1:50002;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        # WebSocket
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+		
+        # 禁用缓存（WebSocket 通常不需要缓存）
+        proxy_no_cache 1;
+        proxy_cache_bypass 1;
+
+        # 增强 WebSocket 连接稳定性
+        proxy_buffering off;  # 禁用缓冲，WebSocket 协议不需要缓冲
+        tcp_nodelay on;       # 开启 TCP_NODELAY，减少延迟
+        tcp_nopush on;        # 开启 TCP_NOPUSH，减少传输中的数据碎片
+
+        # 调整缓冲区大小
+        proxy_buffer_size 16k;
+        proxy_buffers 8 16k;
+        proxy_max_temp_file_size 0;  # 禁用磁盘临时文件，改为内存缓冲		
+    }
+```
