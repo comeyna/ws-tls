@@ -1,5 +1,12 @@
 ## ws + tls 
 
+使用镜像 挂载。
+
+```
+git clone https://github.com/comeyna/reality
+docker build -t xray:reality .
+```
+
 ```
   "inbounds": [
     {
