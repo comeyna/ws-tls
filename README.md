@@ -35,7 +35,6 @@ docker build -t xray:reality .
           "path": "/rss"
         }
       },
-      "tag": "inbound-50002",
       "sniffing": {
         "enabled": false,
         "destOverride": [
