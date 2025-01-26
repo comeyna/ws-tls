@@ -92,5 +92,5 @@ docker build -t xray:reality .
 ## 配置单
 
 ```
-vless://354b0b63-8ae1-43fe-b343-e999be5194c7@you web:443?encryption=none&security=tls&type=ws&host=you%20web&path=%2Frss#ws%2Btls
+vless://354b0b63-8ae1-43fe-b343-e999be5194c7@web:443?encryption=none&security=tls&type=ws&host=web&path=%2Frss#ws%2Btls
 ```
