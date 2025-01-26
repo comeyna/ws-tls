@@ -44,7 +44,6 @@
       "settings": {
         "clients": [
           {
-            "email": "ws+tls",
             "flow": "",
             "id": "354b0b63-8ae1-43fe-b343-e999be5194c7"
           }
