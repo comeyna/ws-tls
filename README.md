@@ -92,5 +92,4 @@ docker build -t xray:reality .
 ## 配置单
 
 ```
-vless://6d4deb1f-e7bd-475d-84dd-9885435d0947@192.227.152.230:40003?encryption=none&security=reality&sni=www.apple.com&fp=chrome&pbk=7H6QOCwSVfLrUO4gA85Lfiv32Q5Ur5AWhDvzDdVbAAE&sid=b1e0&spx=%2F&type=xhttp&path=%2F0d313615&mode=auto#xhttp%20-%20apple
 ```
