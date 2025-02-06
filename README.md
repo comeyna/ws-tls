@@ -7,6 +7,15 @@ git clone https://github.com/comeyna/reality
 docker build -t xray:reality .
 ```
 
+
+## 重要！！！
+
+```
+iptables -A INPUT -p tcp --dport 50002 -j ACCEPT
+iptables -A OUTPUT -p tcp --sport 50002 -j ACCEPT
+```
+
+
 ```
   "inbounds": [
     {
